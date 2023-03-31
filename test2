@@ -1,0 +1,2732 @@
+<style type="text/css" id="wp-custom-css">
+			.cc  {
+clear: both;
+font-size:13px;
+font-color: blue
+background-color:white}
+
+.teamw {
+font-size:10px;
+font-color: pink}
+
+
+
+.periodic:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+.empty:hover {
+  box-shadow: none;
+  transform: none;
+}
+
+.type-1 {
+  background: #ffc78e;
+}
+
+.type-2 {
+  background:rgb(255, 224, 141);
+}
+
+.type-3 {
+  background: #fffa8a;
+}
+
+.type-4 {
+  background: #ecff8b ;
+}
+
+.type-5 {
+  background: #b6ff8a ;
+}
+
+.type-6 {
+  background: #8fff9b;
+}
+
+.type-7 {
+  background: #8cff9a;
+}
+
+.type-8 {
+  background: #ab8fff;
+}
+
+.type-9 {
+  background:#fb8dff ;
+}
+.type-10 {
+  background: #8edeff;
+}
+.type-11 {
+  background:#c8c8c8 ;
+}
+.type-12 {
+  background: ;
+}
+
+
+.legend {
+    position: absolute;
+    top: 3%;
+    left: 34%;
+    padding: 0px;
+    font-size: 13px;
+}
+
+.legend:after {
+  content: "";
+  display: table;
+  clear: table;
+}
+li{
+   list-style: none;
+}
+.legend ul {
+  float: left;
+}
+
+.legend .list-2 {
+  margin-left: 10px;
+  width: 200px;
+}
+.legend .list-3 {
+  margin-left: 0px;
+  width: 200px;
+  padding-left: 0;
+}
+
+.legend .list-1 li {
+  margin: 7px 0;
+}
+
+.legend .list-1 li:first-of-type {
+  margin-top: 2px;
+}
+
+.legend .list-1 span {
+  border: 1px solid black;
+  display: inline-block;
+  padding: 3px;
+  width: 20px;
+  text-align: center;
+  height: 20px;
+  margin-right: 5px;
+}
+
+.legend .list-2 li {
+  margin: 2px;
+  padding: 3px;
+  float: left;
+  width: 70%;
+  cursor: pointer;
+}
+.legend .list-3 li {
+  margin: 2px;
+  padding: 3px;
+  float: left;
+  width: 70%;
+  cursor: pointer;
+}
+body {
+  font-family: Arial;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  padding: 1%;
+}
+.periodic {
+  position: relative;
+  height: 200px;
+  margin-right: -1px;
+  text-shadow: none;
+}
+.periodic-row {
+  clear: both;
+  height: 10%;
+}
+.cell {
+  float: left;
+  position: relative;
+  width: 5.55%;
+  height: 100%;
+	font-size:15px;
+	
+}
+
+.categoria {
+	font-size:0.9em;
+	    -webkit-transform: rotate(-90deg); 
+    -moz-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+	  line-height: 0.77em;
+	
+}
+
+.cell1 {
+    float: left;
+    width: 650%;
+    height: 250%;
+    zoom: 10%;
+}
+.cell2 {
+    float: left;
+    position: relative;
+    width: 330%;
+    height: 150%;
+    zoom: 150%;
+}
+.element {
+	background-color:#eae9ca !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 1px;
+  right: 1px;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 4px rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  text-align: center;
+  cursor: default;
+  pointer-events: none;
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+  background-color: rgba(0, 128, 128, 0.6);
+}
+.element1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 1px;
+  right: 1px;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 4px rgba(255, 155, 155, 0.5);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  text-align: center;
+  cursor: default;
+  pointer-events: none;
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+  background-color: rgba(50, 128, 128, 0.6);
+}
+.cell:hover .element {
+  border-color: rgba(0, 0, 0, 0.1);
+  -webkit-transform: scale(3, 3);
+  -ms-transform: scale(3, 3);
+  transform: scale(3, 3);
+  z-index: 1;
+  background-color: rgba(0, 128, 128, 0.9);
+}
+.at_num{
+	color:black !important
+}
+
+.at_details{
+	color:black !important
+}
+
+.at_num,
+.at_details, 
+.masa,
+.ener,
+.elec,
+.estad {
+  position: absolute;
+  font-size: 4px;
+  color: white;
+  opacity: 0;
+}
+.at_num {
+  top: 4px;
+  right: 5px;
+}
+.masa {
+   top: 4px;
+   left: 5px;
+}
+.ener{
+   top: 13px;
+   left: 5px;
+}
+.elec{
+  top: 13px;
+  right: 12px;
+}
+.estad { 
+ align-self: flex-end;
+  top: 20px;
+  right: 5px;
+}
+.estad li {
+ list-style: none; 
+}
+.symbol {
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  right: 0px;
+  margin-top: -4px;
+  font-size: 9px;
+  line-height: 1;
+  height: 9px;
+  color: #000;
+}
+.at_details {
+  bottom: 4px;
+  top: 73%;
+  left: 0px;
+  right: 0px;
+}
+.cell:nth-child(-n+2) .element{
+  background-color: rgb(255, 224, 141);
+}
+.cell:nth-child(-n+2):hover .element, {
+  background-color: rgb(255, 224, 141);
+}
+.periodic-row:nth-child(-n+6) .cell:nth-child(18) .element {
+  background-color: #8edeff;
+}
+.periodic-row:nth-child(-n+6) .cell:nth-child(18):hover .element {
+  background-color: #8edeff;
+}
+.periodic-row:nth-child(n+2) .cell:nth-child(1) .element {
+  background-color: #ffc78e;;
+}
+.periodic-row:nth-child(n+2) .cell:nth-child(1):hover .element {
+  background-color: #ffc78e;;
+}
+.periodic-row:nth-child(1) .cell:nth-child(1) .element {
+  background-color:#f1c232;
+}
+.periodic-row:nth-child(1) .cell:nth-child(1):hover .element {
+  background-color: #f1c232;
+}
+.periodic-row:nth-child(-n+7) .cell:nth-child(3) .element,
+.periodic-row:nth-child(-n+7) .cell:nth-child(4) .element,
+.periodic-row:nth-child(-n+7) .cell:nth-child(5) .element,
+.periodic-row:nth-child(-n+7) .cell:nth-child(6) .element,
+.periodic-row:nth-child(-n+7) .cell:nth-child(7) .element,
+.periodic-row:nth-child(-n+7) .cell:nth-child(8) .element,
+.periodic-row:nth-child(-n+7) .cell:nth-child(9) .element,
+.periodic-row:nth-child(-n+7) .cell:nth-child(10) .element,
+.periodic-row:nth-child(-n+7) .cell:nth-child(11) .element,
+.periodic-row:nth-child(-n+7) .cell:nth-child(12) .element {
+  background-color: #ecff8b;;
+}
+.periodic-row:nth-child(-n+7) .cell:nth-child(3):hover .element,
+.periodic-row:nth-child(-n+7) .cell:nth-child(4):hover .element,
+.periodic-row:nth-child(-n+7) .cell:nth-child(5):hover .element,
+.periodic-row:nth-child(-n+7) .cell:nth-child(6):hover .element,
+.periodic-row:nth-child(-n+7) .cell:nth-child(7):hover .element,
+.periodic-row:nth-child(-n+7) .cell:nth-child(8):hover .element,
+.periodic-row:nth-child(-n+7) .cell:nth-child(9):hover .element,
+.periodic-row:nth-child(-n+7) .cell:nth-child(10):hover .element,
+.periodic-row:nth-child(-n+7) .cell:nth-child(11):hover .element,
+.periodic-row:nth-child(-n+7) .cell:nth-child(12):hover .element  {
+  background-color: #ecff8b;;
+}
+.periodic-row:nth-child(2) .cell:nth-child(13) .element,
+.periodic-row:nth-child(3) .cell:nth-child(14) .element,
+.periodic-row:nth-child(4) .cell:nth-child(14) .element,
+.periodic-row:nth-child(4) .cell:nth-child(15) .element,
+.periodic-row:nth-child(5) .cell:nth-child(15) .element,
+.periodic-row:nth-child(5) .cell:nth-child(16) .element,
+.periodic-row:nth-child(6) .cell:nth-child(16) .element {
+  background-color: #8fff9b;
+}
+.periodic-row:nth-child(2) .cell:nth-child(13):hover .element,
+.periodic-row:nth-child(3) .cell:nth-child(14):hover .element,
+.periodic-row:nth-child(4) .cell:nth-child(14):hover .element,
+.periodic-row:nth-child(4) .cell:nth-child(15):hover .element,
+.periodic-row:nth-child(5) .cell:nth-child(15):hover .element,
+.periodic-row:nth-child(5) .cell:nth-child(16):hover .element,
+.periodic-row:nth-child(6) .cell:nth-child(16):hover .element {
+  background-color: #8fff9b;
+}
+.periodic-row:nth-child(2) .cell:nth-child(14) .element,
+.periodic-row:nth-child(2) .cell:nth-child(15) .element,
+.periodic-row:nth-child(3) .cell:nth-child(15) .element,
+.periodic-row:nth-child(2) .cell:nth-child(16) .element,
+.periodic-row:nth-child(3) .cell:nth-child(16) .element,
+.periodic-row:nth-child(4) .cell:nth-child(16) .element{
+    background-color: #ab8fff;
+}
+.periodic-row:nth-child(2) .cell:nth-child(14):hover .element,
+.periodic-row:nth-child(2) .cell:nth-child(15):hover .element,
+.periodic-row:nth-child(3) .cell:nth-child(15):hover .element,
+.periodic-row:nth-child(2) .cell:nth-child(16):hover .element,
+.periodic-row:nth-child(3) .cell:nth-child(16):hover .element,
+.periodic-row:nth-child(4) .cell:nth-child(16):hover .element{
+    background-color: #ab8fff;
+}
+.periodic-row:nth-child(-n+6) .cell:nth-child(17) .element{
+      background-color: #fb8dff;
+}
+.periodic-row:nth-child(3) .cell:nth-child(13) .element,
+.periodic-row:nth-child(4) .cell:nth-child(13) .element,
+.periodic-row:nth-child(5) .cell:nth-child(13) .element,
+.periodic-row:nth-child(6) .cell:nth-child(13) .element,
+.periodic-row:nth-child(5) .cell:nth-child(14) .element,
+.periodic-row:nth-child(6) .cell:nth-child(14) .element,
+.periodic-row:nth-child(6) .cell:nth-child(15) .element{
+    background-color:#fffa8a;
+}
+.periodic-row:nth-child(3) .cell:nth-child(13):hover .element,
+.periodic-row:nth-child(4) .cell:nth-child(13):hover .element,
+.periodic-row:nth-child(5) .cell:nth-child(13):hover .element,
+.periodic-row:nth-child(6) .cell:nth-child(13):hover .element,
+.periodic-row:nth-child(5) .cell:nth-child(14):hover .element,
+.periodic-row:nth-child(6) .cell:nth-child(14):hover .element,
+.periodic-row:nth-child(6) .cell:nth-child(15):hover .element{
+    background-color:#fffa8a;
+}
+.periodic-row:nth-child(7) .cell:nth-child(13) .element,
+.periodic-row:nth-child(7) .cell:nth-child(14) .element,
+.periodic-row:nth-child(7) .cell:nth-child(15) .element,
+.periodic-row:nth-child(7) .cell:nth-child(16) .element,
+.periodic-row:nth-child(7) .cell:nth-child(17) .element,
+.periodic-row:nth-child(7) .cell:nth-child(18) .element{
+    background-color:#c8c8c8;
+}
+.periodic-row:nth-child(7) .cell:nth-child(13):hover .element,
+.periodic-row:nth-child(7) .cell:nth-child(14):hover .element,
+.periodic-row:nth-child(7) .cell:nth-child(15):hover .element,
+.periodic-row:nth-child(7) .cell:nth-child(16):hover .element,
+.periodic-row:nth-child(7) .cell:nth-child(17):hover .element,
+.periodic-row:nth-child(7) .cell:nth-child(18):hover .element{
+    background-color:#c8c8c8;
+}
+.periodic-row:nth-child(9) .cell:nth-child(4) .element,
+.periodic-row:nth-child(9) .cell:nth-child(5) .element,
+.periodic-row:nth-child(9) .cell:nth-child(6) .element,
+.periodic-row:nth-child(9) .cell:nth-child(7) .element,
+.periodic-row:nth-child(9) .cell:nth-child(8) .element,
+.periodic-row:nth-child(9) .cell:nth-child(9) .element,
+.periodic-row:nth-child(9) .cell:nth-child(10) .element,
+.periodic-row:nth-child(9) .cell:nth-child(11) .element,
+.periodic-row:nth-child(9) .cell:nth-child(12) .element,
+.periodic-row:nth-child(9) .cell:nth-child(13) .element,
+.periodic-row:nth-child(9) .cell:nth-child(14) .element,
+.periodic-row:nth-child(9) .cell:nth-child(15) .element,
+.periodic-row:nth-child(9) .cell:nth-child(16) .element,
+.periodic-row:nth-child(9) .cell:nth-child(17) .element,
+.periodic-row:nth-child(9) .cell:nth-child(18) .element{
+    background-color:#d0ff8b;
+}
+.periodic-row:nth-child(9) .cell:nth-child(4):hover .element,
+.periodic-row:nth-child(9) .cell:nth-child(5):hover .element,
+.periodic-row:nth-child(9) .cell:nth-child(6):hover .element,
+.periodic-row:nth-child(9) .cell:nth-child(7):hover .element,
+.periodic-row:nth-child(9) .cell:nth-child(8):hover .element,
+.periodic-row:nth-child(9) .cell:nth-child(9):hover .element,
+.periodic-row:nth-child(9) .cell:nth-child(10):hover .element,
+.periodic-row:nth-child(9) .cell:nth-child(11):hover .element,
+.periodic-row:nth-child(9) .cell:nth-child(12):hover .element,
+.periodic-row:nth-child(9) .cell:nth-child(13):hover .element,
+.periodic-row:nth-child(9) .cell:nth-child(14):hover .element,
+.periodic-row:nth-child(9) .cell:nth-child(15):hover .element,
+.periodic-row:nth-child(9) .cell:nth-child(16):hover .element,
+.periodic-row:nth-child(9) .cell:nth-child(17):hover .element,
+.periodic-row:nth-child(9) .cell:nth-child(18):hover .element{
+    background-color:#d0ff8b;
+}
+.periodic-row:nth-child(10) .cell:nth-child(4) .element,
+.periodic-row:nth-child(10) .cell:nth-child(5) .element,
+.periodic-row:nth-child(10) .cell:nth-child(6) .element,
+.periodic-row:nth-child(10) .cell:nth-child(7) .element,
+.periodic-row:nth-child(10) .cell:nth-child(8) .element,
+.periodic-row:nth-child(10) .cell:nth-child(9) .element,
+.periodic-row:nth-child(10) .cell:nth-child(10) .element,
+.periodic-row:nth-child(10) .cell:nth-child(11) .element,
+.periodic-row:nth-child(10) .cell:nth-child(12) .element,
+.periodic-row:nth-child(10) .cell:nth-child(13) .element,
+.periodic-row:nth-child(10) .cell:nth-child(14) .element,
+.periodic-row:nth-child(10) .cell:nth-child(15) .element,
+.periodic-row:nth-child(10) .cell:nth-child(16) .element,
+.periodic-row:nth-child(10) .cell:nth-child(17) .element,
+.periodic-row:nth-child(10) .cell:nth-child(18) .element{
+    background-color:#b6ff8a;
+}
+.periodic-row:nth-child(10) .cell:nth-child(4):hover .element,
+.periodic-row:nth-child(10) .cell:nth-child(5):hover .element,
+.periodic-row:nth-child(10) .cell:nth-child(6):hover .element,
+.periodic-row:nth-child(10) .cell:nth-child(7):hover .element,
+.periodic-row:nth-child(10) .cell:nth-child(8):hover .element,
+.periodic-row:nth-child(10) .cell:nth-child(9):hover .element,
+.periodic-row:nth-child(10) .cell:nth-child(10):hover .element,
+.periodic-row:nth-child(10) .cell:nth-child(11):hover .element,
+.periodic-row:nth-child(10) .cell:nth-child(12):hover .element,
+.periodic-row:nth-child(10) .cell:nth-child(13):hover .element,
+.periodic-row:nth-child(10) .cell:nth-child(14):hover .element,
+.periodic-row:nth-child(10) .cell:nth-child(15):hover .element,
+.periodic-row:nth-child(10) .cell:nth-child(16):hover .element,
+.periodic-row:nth-child(10) .cell:nth-child(17):hover .element,
+.periodic-row:nth-child(10) .cell:nth-child(18):hover .element{
+    background-color:#b6ff8a;
+}
+.cell:nth-child(1) .element {
+  -webkit-transform-origin: 0 50%;
+  -ms-transform-origin: 0 50%;
+  transform-origin: 0 50%;
+}
+.cell:nth-child(18) .element {
+  -webkit-transform-origin: 100% 50%;
+  -ms-transform-origin: 100% 50%;
+  transform-origin: 100% 50%;
+}
+.periodic-row:nth-child(10) .cell .element {
+  -webkit-transform-origin: 50% 100%;
+  -ms-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+}
+.periodic-row:nth-child(1) .cell:nth-child(1) .element {
+  -webkit-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+.periodic-row:nth-child(1) .cell:nth-child(18) .element {
+  -webkit-transform-origin: 100% 0;
+  -ms-transform-origin: 100% 0;
+  transform-origin: 100% 0;
+}
+.periodic-row:nth-child(10) .cell:nth-child(18) .element {
+  -webkit-transform-origin: 100% 100%;
+  -ms-transform-origin: 100% 100%;
+  transform-origin: 100% 100%;
+}
+@media (min-width: 600px) {
+  .cell2 {
+    float: left;
+    position: relative;
+    width: 460%;
+    height: 150%;
+}
+  .periodic {
+    height: 460px;
+    margin-right: -2px;
+		
+  }
+  .element {
+    right: 2px;
+    bottom: 2px;
+		
+  }
+  .at_details, .ener,.elec{
+    font-size: 5px;
+    opacity: 1;
+  }
+  .estad {
+    top: 12px;
+    font-size: 2.5px;
+    opacity: 0;
+}
+.ener{
+   top: 13px;
+   left: 5px;
+	    opacity: 0;
+
+}
+.elec{
+  top: 13px;
+  right: 12px;
+	    opacity: 0;
+
+}
+  .masa{
+    font-size: 5px;
+    opacity: 0;
+   }
+   .at_num, .at_num1{
+     font-size: 10px;
+    opacity: 1;
+		 margin:-6px !important;
+   }
+  .symbol {
+    margin-top: -33px;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 30px;
+    height: 30px;
+    color: #000;
+    text-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
+  }
+  .legend {
+    position: absolute;
+    top: 1%;
+    left: 34%;
+    padding: 0px;
+    font-size: 8px;
+    width: 230px;
+}
+.legend .list-2 {
+    margin-left: 10px;
+    width: 106px;
+    padding-left: 0px;
+}
+.legend .list-3 {
+    margin-left: 0px;
+    width: 107px;
+    padding-left: 0;
+}
+}
+@media (min-width: 800px) {
+  .periodic {
+    height: 540px;
+  }
+  .symbol {
+    font-size: 18px;
+  }
+}
+@media (min-width: 992px) {
+  .periodic {
+    height: 680px;
+  }
+  .at_details, .ener, .elec, .estad {
+    font-size: 5px;
+  }
+  .estad {
+    top: 20px;
+    opacity: 1;
+}
+  .masa{
+    font-size: 6px;
+  }
+  .at_num, .at_num1{
+     font-size: 7px;
+   }
+  .symbol {
+    font-size: 20px;
+  }
+}
+@media (min-width: 1200px) {
+  .periodic {
+    height: 800px;
+  }
+  .at_details, .ener, .elec, .estad {
+    font-size: 6px;
+  }
+  .masa{
+    font-size: 7px;
+  }
+  .at_num, .at_num1{
+     font-size: 10px;
+   }
+  .symbol {
+    font-size: 30px;
+  }
+.legend {
+    position: absolute;
+    top: 3%;
+    left: 36%;
+    padding: 0px;
+    font-size: 13px;
+        width: 470px;
+}
+
+.legend:after {
+  content: "";
+  display: table;
+  clear: table;
+}
+li{
+   list-style: none;
+}
+.legend ul {
+  float: left;
+}
+
+.legend .list-2 {
+  margin-left: 10px;
+  width: 200px;
+}
+.legend .list-3 {
+  margin-left: 0px;
+  width: 200px;
+  padding-left: 0;
+}
+
+.legend .list-1 li {
+  margin: 7px 0;
+}
+
+.legend .list-1 li:first-of-type {
+  margin-top: 2px;
+}
+
+.legend .list-1 span {
+  border: 1px solid black;
+  display: inline-block;
+  padding: 3px;
+  width: 20px;
+  text-align: center;
+  height: 20px;
+  margin-right: 5px;
+}
+
+.legend .list-2 li {
+  margin: 2px;
+  padding: 3px;
+  float: left;
+  width: 70%;
+  cursor: pointer;
+}
+.legend .list-3 li {
+  margin: 2px;
+  padding: 3px;
+  float: left;
+  width: 70%;
+  cursor: pointer;
+}
+}
+
+
+
+
+		</style>
+</head>
+<body class="home page-template page-template-page-templates page-template-page_fullwidth page-template-page-templatespage_fullwidth-php page page-id-9 menu-inline elementor-default elementor-kit-875">
+<span id="toptarget"></span>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-dark-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0 0.49803921568627" /><feFuncG type="table" tableValues="0 0.49803921568627" /><feFuncB type="table" tableValues="0 0.49803921568627" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-purple-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0.54901960784314 0.98823529411765" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.71764705882353 0.25490196078431" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-blue-red"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 0.27843137254902" /><feFuncB type="table" tableValues="0.5921568627451 0.27843137254902" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-midnight"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0 0" /><feFuncG type="table" tableValues="0 0.64705882352941" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-magenta-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0.78039215686275 1" /><feFuncG type="table" tableValues="0 0.94901960784314" /><feFuncB type="table" tableValues="0.35294117647059 0.47058823529412" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-purple-green"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0.65098039215686 0.40392156862745" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.44705882352941 0.4" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-blue-orange"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0.098039215686275 1" /><feFuncG type="table" tableValues="0 0.66274509803922" /><feFuncB type="table" tableValues="0.84705882352941 0.41960784313725" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg> <div class="preloader">
+<div class="spinner">
+<div class="pre-bounce1"></div>
+<div class="pre-bounce2"></div>
+</div>
+</div>
+<div id="page" class="hfeed site">
+<a class="skip-link screen-reader-text" href="#content">Saltar al contenido</a>
+<div class="header-clone"></div>
+<header id="masthead" class="main-header header_layout_2 sticky-header sticky-scrolltop">
+<div class="container-fluid">
+<div class="site-header-inner">
+<div class="row valign">
+<div class="header-col">
+<div class="site-branding">
+<a href="https://nelmartinez.com/tpe/" title="Tabla periódica de los encuentros"><img width="512" height="512" class="site-logo" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/cropped-id_nelmartinez.jpg" alt="Tabla periódica de los encuentros" /></a>
+</div>
+</div>
+<div class="header-col menu-col menu-right">
+<nav id="mainnav" class="mainnav">
+<div class="menu-menu-1-container"><ul id="primary-menu" class="menu"><li id="menu-item-841" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-9 current_page_item menu-item-841"><a href="https://nelmartinez.com/tpe/" aria-current="page">T.E. Encuentros Interactivo</a></li>
+<li id="menu-item-842" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-842"><a href="https://nelmartinez.com/tpe/index.php/encuentros-periodicos-impresos/">T.E. Encuentros Impresos</a></li>
+</ul></div> </nav>
+</div>
+<div class="header-col header-elements">
+<a href="#" class="header-search header-item">
+<span class="screen-reader-text">Buscar</span>
+<i class="sydney-svg-icon icon-search active"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z" /></svg></i>
+<i class="sydney-svg-icon icon-cancel"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41L12.59 0Z" /></svg></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+<div class="header-search-form">
+<form role="search" method="get" class="search-form" action="https://nelmartinez.com/tpe/">
+<label>
+<span class="screen-reader-text">Buscar:</span>
+<input type="search" class="search-field" placeholder="Buscar &hellip;" value="" name="s" />
+</label>
+<input type="submit" class="search-submit" value="Buscar" />
+<input id="apbct_submit_id__search_form_72233" class="apbct_special_field apbct__email_id__search_form" name="apbct_submit_id__search_form_72233" type="submit" apbct_event_id="72233" size="30" maxlength="200" value="" /></form> </div>
+</header>
+<div class="sydney-offcanvas-menu">
+<div class="mobile-header-item">
+<div class="row valign">
+<div class="col-xs-8">
+<div class="site-branding">
+<a href="https://nelmartinez.com/tpe/" title="Tabla periódica de los encuentros"><img width="512" height="512" class="site-logo" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/cropped-id_nelmartinez.jpg" alt="Tabla periódica de los encuentros" /></a>
+</div>
+</div>
+<div class="col-xs-4 align-right">
+<a class="mobile-menu-close" href="#"><i class="sydney-svg-icon icon-cancel"><span class="screen-reader-text">Cerrar menú</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41L12.59 0Z" /></svg></i></a>
+</div>
+</div>
+</div>
+<div class="mobile-header-item">
+<nav id="mainnav" class="mainnav">
+<div class="menu-menu-1-container"><ul id="primary-menu" class="menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-9 current_page_item menu-item-841"><a href="https://nelmartinez.com/tpe/" aria-current="page">T.E. Encuentros Interactivo</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-842"><a href="https://nelmartinez.com/tpe/index.php/encuentros-periodicos-impresos/">T.E. Encuentros Impresos</a></li>
+</ul></div> </nav>
+</div>
+<div class="mobile-header-item offcanvas-items">
+</div>
+</div>
+<header id="masthead-mobile" class="main-header mobile-header ">
+<div class="container-fluid">
+<div class="row valign">
+<div class="col-sm-4 col-grow-mobile">
+<div class="site-branding">
+<a href="https://nelmartinez.com/tpe/" title="Tabla periódica de los encuentros"><img width="512" height="512" class="site-logo" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/cropped-id_nelmartinez.jpg" alt="Tabla periódica de los encuentros" /></a>
+</div>
+</div>
+<div class="col-sm-8 col-grow-mobile header-elements valign align-right">
+<a href="#" class="header-search header-item">
+<span class="screen-reader-text">Buscar</span>
+<i class="sydney-svg-icon icon-search active"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z" /></svg></i>
+<i class="sydney-svg-icon icon-cancel"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41L12.59 0Z" /></svg></i>
+</a>
+<a href="#" class="menu-toggle">
+<span class="screen-reader-text">Alternar menú</span>
+<i class="sydney-svg-icon"><svg width="16" height="11" viewBox="0 0 16 11" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="16" height="1" /><rect y="5" width="16" height="1" /><rect y="10" width="16" height="1" /></svg></i>
+</a>
+</div>
+</div>
+</div>
+<div class="header-search-form">
+<form role="search" method="get" class="search-form" action="https://nelmartinez.com/tpe/">
+<label>
+<span class="screen-reader-text">Buscar:</span>
+<input type="search" class="search-field" placeholder="Buscar &hellip;" value="" name="s" />
+</label>
+<input type="submit" class="search-submit" value="Buscar" />
+<input id="apbct_submit_id__search_form_99004" class="apbct_special_field apbct__email_id__search_form" name="apbct_submit_id__search_form_99004" type="submit" apbct_event_id="99004" size="30" maxlength="200" value="" /></form> </div>
+</header>
+<div class="sydney-hero-area">
+<div class="header-image">
+<div class="overlay"></div> </div>
+</div>
+<div id="content" class="page-wrap">
+<div class="content-wrapper container">
+<div class="row">
+<div id="primary" class="content-area col-md-12">
+<main id="main" class="site-main" role="main">
+<article id="post-9" class="post-9 page type-page status-publish hentry">
+<div class="content-inner">
+<header class="entry-header">
+<h1 class="title-post entry-title">ENCUENTROS PERIÓDICOS Interactivo</h1> </header>
+<div class="entry-content">
+<p>Esta tabla periódica de los encuentros o estrategias de relacionamiento empresarial utiliza la visualización y didáctica de la universal tabla periódica. Se proponen 118 encuentros en 20 categorías (18 presenciales en vertical y dos virtuales en horizontal) y procura que su consulta sea periódica para convertirla en un <em>driver</em> o activador alquímico que permita rediseñarlos y experimentarlos de manera concreta y sobre todo creativa.  El recurso es descargable de manera gratuita desde la página del autor, su uso está determinado por las condiciones de su licencia.</p>
+<div class="periodic">
+<div class="periodic-row">
+<div class="cell"> <div class="“icono”"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/1-alimentacion.png" alt="Alimentación"></div> </div>
+<div class="cell"> <div class="“icono”"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/2-tiempo.png" alt="Tiempo"></div> </div>
+<div class="cell"> <div class="“icono”"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/3-induccion.png" alt="Inducción"></div> </div>
+<div class="cell"> <div class="“icono”"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/4-antelacion.png" alt="Antelación"></div> </div>
+<div class="cell"> <div class="“icono”"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/6-proceso.png" alt="Proceso"></div> </div>
+<div class="cell"> <div class="“icono”"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/5-apertura.png" alt="Apertura"></div> </div>
+<div class="cell"> <div class="“icono”"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/8-presentacion.png" alt="Presentación"></div> </div>
+<div class="cell"> <div class="“icono”"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/7-proyeccion.png" alt="Clausura"></div> </div>
+<div class="cell"> <div class="“icono”"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/9-negociacion.png" alt="Negociación"></div> </div>
+<div class="cell"> <div class="“icono”"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/10-networking.png" alt="Networking"></div> </div>
+<div class="cell"> <div class="“icono”"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/11-deliberacion.png" alt="Deliberación"></div> </div>
+<div class="cell"> <div class="“icono”"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/12-acompanamiento.png" alt="Acompañamiento"></div> </div>
+<div class="cell"> <div class="“icono”"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/13-espontaneo.png" alt="Espontáneo"></div> </div>
+<div class="cell"> <div class="“icono”"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/14-competicion.png" alt="Competición"></div> </div>
+<div class="cell"> <div class="“icono”"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/15-espacio.png" alt="Espacio"></div> </div>
+<div class="cell"> <div class="“icono”"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/16-discurso.png" alt="Discurso"></div> </div>
+<div class="cell"> <div class="“icono”"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/17-recaudacion.png" alt="Recaudación"></div> </div>
+<div class="cell"> <div class="“icono”"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/18-ceremonia.png" alt="Ceremonia"></div> </div>
+</div>
+<div style="clear:both;"></div>
+<br><br>
+<br><br>
+<br><br>
+<div class="periodic-row">
+<div class="cell"> <div class="categoria"><b style="color:#f7a630;">←.1.ALIMENTACIÓN</b><br>Deleitar&nbsp;y&nbsp;conectar</div> </div>
+<div class="cell"> <div class="categoria"><b style="color:#f4bb47;">←.TIEMPO</b> <br>Recordar&nbsp;un&nbsp;valorun&nbsp;simbólico</div> </div>
+<div class="cell"> <div class="categoria"><b style="color:#777;">←.INDUCCIÓN</b><br>Sensibilizar&nbsp;e&nbsp;interiorizar&nbsp;valores</div> </div>
+<div class="cell"> <div class="categoria"><b style="color:#ef6c66;">←.ANTELACIÓN</b><br>Perfilar&nbsp;objetivos
+</div> </div>
+<div class="cell"> <div class="categoria"><b style="color:#2d86aa;">←.PROCESO</b><br>Prototipar&nbsp;y&nbsp;aterrizar&nbsp;ideas</div> </div>
+<div class="cell"> <div class="categoria"><b style="color:#6ce0ca;">←.APERTURA</b><br>Iniciar&nbsp;ciclos
+</div> </div>
+<div class="cell"> <div class="categoria"><b style="color:#8baeaf;">←.PRESENTACIÓN</b><br>Comunicar&nbsp;ideas</div> </div>
+<div class="cell"> <div class="categoria"><b style="color:#80bc73;">←.CLAUSURA</b><br>Cerrar&nbsp;y&nbsp;proyectar&nbsp;nuevos&nbsp;ciclos</div> </div>
+<div class="cell"> <div class="categoria"><b style="color:#78c5db;">←.NEGOCIACIÓN</b><br>Concertar&nbsp;y&nbsp;concretar</div> </div>
+<div class="cell"> <div class="categoria"><b style="color:#3692a8;">←.NETWORKING</b><br>Intercambiar&nbsp;conocimiento</div> </div>
+<div class="cell"> <div class="categoria"><b style="color:#797c7c;">←.DELIBERACIÓN</b><br>Evaluar&nbsp;desempeño</div> </div>
+<div class="cell"> <div class="categoria"><b style="color:#a5b2b5;">←.ACOMPAÑAMIENTO</b><br>Recibir&nbsp;asesoría </div> </div>
+<div class="cell"> <div class="categoria"><b style="color:#d8a377;">←.ESPONTÁNEO</b><br>Sorprender&nbsp;a&nbsp;la&nbsp;audiencia</div> </div>
+<div class="cell"> <div class="categoria"><b style="color:#e2d664;">←.COMPETICIÓN</b><br>Demostrar&nbsp;habilidades</div> </div>
+<div class="cell"> <div class="categoria"><b style="color:#6ea048;">←.ESPACIO</b><br>Recorrer&nbsp;rutas&nbsp;inspiradoras</div> </div>
+<div class="cell"> <div class="categoria"><b style="color:#7eaaaf;">←.DISCURSO</b><br>Complementar&nbsp;ideas
+</div> </div>
+<div class="cell"> <div class="categoria"><b style="color:#f7c331;">←.RECAUDACIÓN</b><br>Cooperar&nbsp;y&nbsp;recolectar
+</div> </div>
+<div class="cell"> <div class="categoria"><b style="color:#80a8a1; font-size=" 2em"="">←.CEREMONIA</b><br>Celebrar&nbsp;y&nbsp;valorar&nbsp;la&nbsp;confianza
+</div> </div>
+</div>
+<div style="clear:both;"></div>
+<div class="periodic-row">
+<div class="cell">
+<div class="element">
+<div class="masa">1.00794</div>
+<div class="at_num">1</div>
+<div class="ener">1312.0</div>
+<div class="elec">2.20</div>
+<div class="estad">
+</div>
+<div class="“icono”"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/cafe72.png" alt="Dinosaur"></div>
+<div class="at_details">Café</div>
+</div>
+</div>
+<div class="cell empty"></div>
+<div class="cell empty"></div>
+<div class="cell empty"></div>
+<div class="cell empty"></div>
+<div class="cell empty"></div>
+<div class="cell empty"></div>
+<div class="cell empty"></div>
+<div class="cell empty"></div>
+<div class="cell empty"></div>
+<div class="cell empty"></div>
+<div class="cell empty"></div>
+<div class="cell empty"></div>
+<div class="cell empty"></div>
+<div class="cell empty"></div>
+<div class="cell empty"></div>
+<div class="cell empty"></div>
+<div class="cell">
+<div class="element">
+<div class="at_num">2</div>
+<div class="ener">2372.3</div>
+<div class="elec"></div>
+<div class="estad">
+<li></li>
+<li></li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/ritual72.png" alt="Dinosaur"></div>
+<div class="at_details">Ritual</div>
+</div>
+</div>
+</div>
+<div class="periodic-row">
+<div class="cell">
+<div class="element">
+<div class="masa">6.941</div>
+<div class="at_num">3</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/desayuno72.png" alt="Dinosaur"></div>
+<div class="ener">520.0</div>
+<div class="elec">0.98</div>
+<div class="estad">
+</div>
+<div class="at_details">Desayuno</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">9.012182</div>
+<div class="at_num">4</div>
+<div class="ener">899.5</div>
+<div class="elec">1.57</div>
+<div class="estad">
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/minuto-de72.png" alt="Dinosaur"></div>
+<div class="at_details">Minuto de</div>
+</div>
+</div>
+<div class="cell"></div>
+<div class="cell"></div>
+<div class="cell">
+<div class="element">
+<div class="cc"> <div class="cell1"> Esta TABLA PERIÓDICA DE LOS ENCUENTROS tiene derechos de autor de Nel Martínez www.nelmartinez.com/tpe bajo una licencia Creative Commons Atribución-Compartir Igual 4.0 Internacional (CC BY-SA 4.0). Este enlace contiene las condiciones de uso completas y legibles. https://creativecommons.org/licenses/by-sa/4.0/deed.es</div>
+</div>
+</div>
+</div>
+<div class="cell"></div>
+<div class="cell"></div>
+<div class="cell"></div>
+<div class="cell"></div>
+<div class="cell"></div>
+<div class="cell"></div>
+<div class="cell"></div>
+<div class="cell">
+<div class="element">
+<div class="masa">10.811</div>
+<div class="at_num">5</div>
+<div class="ener">800.6</div>
+<div class="elec">2.04</div>
+<div class="estad">
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/flashmob72.png" alt="Dinosaur"></div>
+<div class="at_details">Flashmob</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">12.0107</div>
+<div class="at_num">6</div>
+<div class="ener">1086.5</div>
+<div class="elec">2.55</div>
+<div class="estad">
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/torneo72.png" alt="Dinosaur"></div>
+<div class="at_details">Torneo</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">14.0067</div>
+<div class="at_num">7</div>
+<div class="ener">1402.3</div>
+<div class="elec">3.04</div>
+<div class="estad">
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/campamento72.png" alt="Dinosaur"></div>
+<div class="at_details">Campamento</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">15.9994</div>
+<div class="at_num">8</div>
+<div class="ener">1313.9</div>
+<div class="elec">3.44</div>
+<div class="estad">
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/charla72.png" alt="Dinosaur"></div>
+<div class="at_details">Charla</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">18.998403</div>
+<div class="at_num">9</div>
+<div class="ener">1681.0</div>
+<div class="elec">3.98</div>
+<div class="estad">
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/ideathon72.png" alt="Dinosaur"></div>
+<div class="at_details">Ideathon</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">20.1797</div>
+<div class="at_num">10</div>
+<div class="ener">2080.7</div>
+<div class="elec"></div>
+<div class="estad">
+<li></li>
+<li></li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/gala72.png" alt="Dinosaur"></div>
+<div class="at_details">Gala</div>
+</div>
+</div>
+</div>
+<div class="periodic-row">
+<div class="cell">
+<div class="element">
+<div class="masa">22.98976</div>
+<div class="at_num">11</div>
+<div class="ener">495.8</div>
+<div class="elec">0.93</div>
+<div class="estad">
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/brunch72.png" alt="Dinosaur"></div>
+<div class="at_details">Brunch</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">24.3050</div>
+<div class="at_num">12</div>
+<div class="ener">737.7</div>
+<div class="elec">1.31</div>
+<div class="estad">
+<li>+2</li>
+<li>+1</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/hora-de72.png" alt="Dinosaur"></div>
+<div class="at_details">Hora de</div>
+</div>
+</div>
+<div class="cell"></div>
+<div class="cell"></div>
+<div class="cell"></div>
+<div class="cell"></div>
+<div class="cell"></div>
+<div class="cell"></div>
+<div class="cell"></div>
+<div class="cell"></div>
+<div class="cell"></div>
+<div class="cell"></div>
+<div class="cell">
+<div class="element">
+<div class="masa">26.98153</div>
+<div class="at_num">13</div>
+<div class="ener">577.5</div>
+<div class="elec">1.61</div>
+<div class="estad">
+<li>+3</li>
+<li>+1</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/road-show72.png" alt="Dinosaur"></div>
+<div class="at_details">Roadshow</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">28.0855</div>
+<div class="at_num">14</div>
+<div class="ener">786.5</div>
+<div class="elec">1.90</div>
+<div class="estad">
+<li>+4</li>
+<li>+3</li>
+<li>+2</li>
+<li>+1</li>
+<li>-1</li>
+<li>-2</li>
+<li>-3</li>
+<li>-4</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/campeonato72.png" alt="Dinosaur"></div>
+<div class="at_details">Campeonato</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">30.97696</div>
+<div class="at_num">15</div>
+<div class="ener">1011.8</div>
+<div class="elec">2.19</div>
+<div class="estad">
+<li>+5</li>
+<li>+4</li>
+<li>+3</li>
+<li>+2</li>
+<li>+1</li>
+<li>-1</li>
+<li>-2</li>
+<li>-3</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/gira72.png" alt="Dinosaur"></div>
+<div class="at_details">Gira</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">32.065</div>
+<div class="at_num">16</div>
+<div class="ener">999.6</div>
+<div class="elec">2.58</div>
+<div class="estad">
+<li>+6</li>
+<li>+5</li>
+<li>+4</li>
+<li>+3</li>
+<li>+2</li>
+<li>+1</li>
+<li>-1</li>
+<li>-2</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/conversatorio72.png" alt="Dinosaur"></div>
+<div class="at_details">Conversatorio</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">35.453</div>
+<div class="at_num">17</div>
+<div class="ener">1251.2</div>
+<div class="elec">3.16</div>
+<div class="estad">
+<li>+7</li>
+<li>+6</li>
+<li>+5</li>
+<li>+4</li>
+<li>+3</li>
+<li>+2</li>
+<li>+1</li>
+<li>-1</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/hackathon72.png" alt="Dinosaur"></div>
+<div class="at_details">Hackathon</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">39.948</div>
+<div class="at_num">18</div>
+<div class="ener">1520.6</div>
+<div class="elec"></div>
+<div class="estad">
+<li></li>
+<li></li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/aniversario72.png" alt="Dinosaur"></div>
+<div class="at_details">Aniversario</div>
+</div>
+</div>
+</div>
+<div class="periodic-row">
+<div class="cell">
+<div class="element">
+<div class="masa">39.0983</div>
+<div class="at_num">19</div>
+ <div class="ener">418.8</div>
+<div class="elec">0.82</div>
+<div class="estad">
+<li>+1</li>
+<li></li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/almuerzo72.png" alt="Dinosaur"></div>
+<div class="at_details">Almuerzo</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">40.078</div>
+<div class="at_num">20</div>
+<div class="ener">589.8</div>
+<div class="elec">1.00</div>
+<div class="estad">
+<li>+2</li>
+<li></li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/dia-de72.png" alt="Dinosaur"></div>
+<div class="at_details">Día de</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">44.95591</div>
+<div class="at_num">21</div>
+<div class="ener">633.1</div>
+<div class="elec">1.36</div>
+<div class="estad">
+<li>+3</li>
+<li>+2</li>
+<li>+1</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/entrevista72.png" alt="Dinosaur"></div>
+<div class="at_details">Entrevista</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">47.867</div>
+<div class="at_num">22</div>
+<div class="ener">658.8</div>
+<div class="elec">1.54</div>
+<div class="estad">
+<li>+4</li>
+<li>+3</li>
+<li>+2</li>
+<li>+1</li>
+<li>-1</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/focus-group72.png" alt="Dinosaur"></div>
+<div class="at_details">Focus group</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">50.9415</div>
+<div class="at_num">23</div>
+<div class="ener">650.9</div>
+<div class="elec">1.63</div>
+<div class="estad">
+<li>+5</li>
+<li>+4</li>
+<li>+3</li>
+<li>+2</li>
+<li>+1</li>
+<li>-1</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/ensayo72.png" alt="Dinosaur"></div>
+<div class="at_details">Ensayo</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">51.9962</div>
+<div class="at_num">24</div>
+<div class="ener">652.9</div>
+<div class="elec">1.66</div>
+<div class="estad">
+<li>+6</li>
+<li>+5</li>
+<li>+4</li>
+<li>+3</li>
+<li>+2</li>
+<li>+1</li>
+<li>-1</li>
+<li>-2</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/kick-off72.png" alt="Dinosaur"></div>
+<div class="at_details">Kick off</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">54.93804</div>
+<div class="at_num">25</div>
+<div class="ener">717.3</div>
+<div class="elec">1.55</div>
+<div class="estad">
+<li>+7</li>
+<li>+6</li>
+<li>+5</li>
+<li>+4</li>
+<li>+3</li>
+<li>+2</li>
+<li>+1</li>
+<li>&#8230;</li>
+<li>-3</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/exposicion72.png" alt="Dinosaur"></div>
+<div class="at_details">Exposición</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">55.845</div>
+<div class="at_num">26</div>
+<div class="ener">762.5</div>
+<div class="elec">1.83</div>
+<div class="estad">
+<li>+6</li>
+<li>+5</li>
+<li>+4</li>
+<li>+3</li>
+<li>+2</li>
+<li>+1</li>
+<li>-1</li>
+<li>-2</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/graduacion72.png" alt="Dinosaur"></div>
+<div class="at_details">Graduación</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">58.93319</div>
+<div class="at_num">27</div>
+<div class="ener">760.4</div>
+<div class="elec">1.91</div>
+<div class="estad">
+<li>+5</li>
+<li>+4</li>
+<li>+3</li>
+<li>+2</li>
+<li>+1</li>
+<li>-1</li>
+<li>-2</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/subasta72.png" alt="Dinosaur"></div>
+<div class="at_details">Subasta</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">58.6934</div>
+<div class="at_num">28</div>
+<div class="ener">737.4</div>
+<div class="elec">1.88</div>
+<div class="estad">
+<li>+4</li>
+<li>+3</li>
+<li>+2</li>
+<li>+1</li>
+<li>-1</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/speed-networking72.png" alt="Dinosaur"></div>
+<div class="at_details">Speed Networking</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">63.546</div>
+<div class="at_num">29</div>
+<div class="ener">745.5</div>
+<div class="elec">1.90</div>
+<div class="estad">
+<li>+4</li>
+<li>+3</li>
+<li>+2</li>
+<li>+1</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/junta72.png" alt="Dinosaur"></div>
+<div class="at_details">Junta</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">65.38</div>
+<div class="at_num">30</div>
+<div class="ener">906.4</div>
+<div class="elec">1.65</div>
+<div class="estad">
+<li>+2</li>
+<li></li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/tutoria72.png" alt="Dinosaur"></div>
+<div class="at_details">Tutoría</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">69.723</div>
+<div class="at_num">31</div>
+<div class="ener">578.8</div>
+<div class="elec">1.81</div>
+<div class="estad">
+<li>+3</li>
+<li>+2</li>
+<li>+1</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/artattack72.png" alt="Dinosaur"></div>
+<div class="at_details">Artattack</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">72.64</div>
+<div class="at_num">32</div>
+<div class="ener">762.0</div>
+<div class="elec">2.01</div>
+<div class="estad">
+<li>+4</li>
+<li>+3</li>
+<li>+2</li>
+<li>+1</li>
+<li>-4</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/copa72.png" alt="Dinosaur"></div>
+<div class="at_details">Copa</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">74.92160</div>
+<div class="at_num">33</div>
+<div class="ener">947.0</div>
+<div class="elec">2.18</div>
+<div class="estad">
+<li>+5</li>
+<li>+3</li>
+<li>+2</li>
+<li>-3</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/retiro72.png" alt="Dinosaur"></div>
+<div class="at_details">Retiro</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">78.96</div>
+<div class="at_num">34</div>
+<div class="ener">941.0</div>
+<div class="elec">2.55</div>
+<div class="estad">
+<li>+6</li>
+<li>+4</li>
+<li>+2</li>
+<li>-2</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/foro72.png" alt="Dinosaur"></div>
+<div class="at_details">Foro</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">79.904</div>
+<div class="at_num">35</div>
+<div class="ener">1139.9</div>
+<div class="elec">2.96</div>
+<div class="estad">
+<li>+7</li>
+<li>+5</li>
+<li>+4</li>
+<li>+3</li>
+<li>+1</li>
+<li>-1</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/fonathon72.png" alt="Dinosaur"></div>
+<div class="at_details">Fonathon</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">83.798</div>
+<div class="at_num">36</div>
+<div class="ener">1350.8</div>
+<div class="elec">3.00</div>
+<div class="estad">
+<li>+2</li>
+<li></li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/conmemoracion72.png" alt="Dinosaur"></div>
+<div class="at_details">Conmemoracion</div>
+</div>
+</div>
+</div>
+<div class="periodic-row">
+<div class="cell">
+<div class="element">
+<div class="masa">85.4678</div>
+<div class="at_num">37</div>
+<div class="ener">403.0</div>
+<div class="elec">0.82</div>
+<div class="estad">
+<li>+1</li>
+<li></li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/picnic72.png" alt="Dinosaur"></div>
+<div class="at_details">Picnic</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">40.078</div>
+<div class="at_num">38</div>
+<div class="ener">549.5</div>
+<div class="elec">0.95</div>
+<div class="estad">
+<li>+2</li>
+<li></li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/semana-de72.png" alt="Dinosaur"></div>
+<div class="at_details">Semana de</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">88.90585</div>
+<div class="at_num">39</div>
+<div class="ener">600.0</div>
+<div class="elec">1.22</div>
+<div class="estad">
+<li>+3</li>
+<li>+2</li>
+<li>+1</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/bienvenida72.png" alt="Dinosaur"></div>
+<div class="at_details">Bienvenida</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">91.224</div>
+<div class="at_num">40</div>
+<div class="ener">640.1</div>
+<div class="elec">1.33</div>
+<div class="estad">
+<li>+4</li>
+<li>+3</li>
+<li>+2</li>
+<li>+1</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/demo72.png" alt="Dinosaur"></div>
+<div class="at_details">Demo</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">92.90638</div>
+<div class="at_num">41</div>
+<div class="ener">652.1</div>
+<div class="elec">1.60</div>
+<div class="estad">
+<li>+5</li>
+<li>+4</li>
+<li>+3</li>
+<li>+2</li>
+<li>-1</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/workshop72.png" alt="Dinosaur"></div>
+<div class="at_details">Workshop</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">95.96</div>
+<div class="at_num">42</div>
+<div class="ener">684.3</div>
+<div class="elec">2.16</div>
+<div class="estad">
+<li>+6</li>
+<li>+5</li>
+<li>+4</li>
+<li>+3</li>
+<li>+2</li>
+<li>+1</li>
+<li>-1</li>
+<li>-2</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/inauguracion72.png" alt="Dinosaur"></div>
+<div class="at_details">Inauguración</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">(98)</div>
+<div class="at_num">43</div>
+<div class="ener">702.0</div>
+<div class="elec">1.90</div>
+<div class="estad">
+<li>+7</li>
+<li>+6</li>
+<li>+5</li>
+<li>+4</li>
+<li>+3</li>
+<li>+2</li>
+<li>+1</li>
+<li>-1</li>
+<li>-3</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/congreso72.png" alt="Dinosaur"></div>
+<div class="at_details">Congreso</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">101.07</div>
+<div class="at_num">44</div>
+<div class="ener">710.2</div>
+<div class="elec">2.20</div>
+<div class="estad">
+<li>+8</li>
+<li>+7</li>
+<li>+6</li>
+<li>+5</li>
+<li>+4</li>
+<li>+3</li>
+<li>+2</li>
+<li>+1</li>
+<li>-2</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/cosecha72.png" alt="Dinosaur"></div>
+<div class="at_details">Cosecha</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">102.9055</div>
+<div class="at_num">45</div>
+<div class="ener">719.7</div>
+<div class="elec">2.28</div>
+<div class="estad">
+<li>+6</li>
+<li>+5</li>
+<li>+4</li>
+<li>+3</li>
+<li>+2</li>
+<li>+1</li>
+<li>-1</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/subasta-inversa72.png" alt="Dinosaur"></div>
+<div class="at_details">Subasta inversa</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">106.42</div>
+<div class="at_num">46</div>
+<div class="ener">804.4</div>
+<div class="elec">2.20</div>
+<div class="estad">
+<li>+4</li>
+<li>+2</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/rueda-de-negocios72.png" alt="Dinosaur"></div>
+<div class="at_details">Rueda de negocios</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">107.8682</div>
+<div class="at_num">47</div>
+<div class="ener">731.0</div>
+<div class="elec">1.93</div>
+<div class="estad">
+<li>+3</li>
+<li>+2</li>
+<li>+1</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/asamblea72.png" alt="Dinosaur"></div>
+<div class="at_details">Asamblea</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">112.441</div>
+<div class="at_num">48</div>
+<div class="ener">867.8</div>
+<div class="elec">1.69</div>
+<div class="estad">
+<li>+2</li>
+<li></li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/mentoria72.png" alt="Dinosaur"></div>
+<div class="at_details">Mentoria</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">114.818</div>
+<div class="at_num">49</div>
+<div class="ener">558.3</div>
+<div class="elec">1.78</div>
+<div class="estad">
+<li>+3</li>
+<li>+2</li>
+<li>+1</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/showroom72.png" alt="Dinosaur"></div>
+<div class="at_details">Showroom</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">118.710</div>
+<div class="at_num">50</div>
+<div class="ener">708.6</div>
+<div class="elec">1.96</div>
+<div class="estad">
+<li>+4</li>
+<li>+2</li>
+<li>-4</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/eliminatoria72.png" alt="Dinosaur"></div>
+<div class="at_details">Eliminatoria</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">121.760</div>
+<div class="at_num">51</div>
+<div class="ener">834.0</div>
+<div class="elec">2.05</div>
+<div class="estad">
+<li>+5</li>
+<li>+3</li>
+<li>-3</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/club72.png" alt="Dinosaur"></div>
+<div class="at_details">Club</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">127.60</div>
+<div class="at_num">52</div>
+<div class="ener">869.3</div>
+<div class="elec">2.10</div>
+<div class="estad">
+<li>+6</li>
+<li>+5</li>
+<li>+4</li>
+<li>+2</li>
+<li>-2</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/debate72.png" alt="Dinosaur"></div>
+<div class="at_details">Debate</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">126.9044</div>
+<div class="at_num">53</div>
+<div class="ener">1008.4</div>
+<div class="elec">2.66</div>
+<div class="estad">
+<li>+7</li>
+<li>+5</li>
+<li>+3</li>
+<li>+1</li>
+<li>-1</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/sembraton-72.png" alt="Dinosaur"></div>
+<div class="at_details">Sembratón</div>
+ </div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">131.293</div>
+<div class="at_num">54</div>
+<div class="ener">1170.4</div>
+<div class="elec">2.60</div>
+<div class="estad">
+<li>+8</li>
+<li>+6</li>
+<li>+4</li>
+<li>+2</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/homenaje72.png" alt="Dinosaur"></div>
+<div class="at_details">Homenaje</div>
+</div>
+</div>
+</div>
+<div class="periodic-row">
+<div class="cell">
+<div class="element">
+<div class="masa">132.9054</div>
+<div class="at_num">55</div>
+<div class="ener">375.7</div>
+<div class="elec">0.79</div>
+<div class="estad">
+<li>+1</li>
+<li></li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/cena72.png" alt="Dinosaur"></div>
+<div class="at_details">Cena</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">137.327</div>
+<div class="at_num">56</div>
+<div class="ener">502.9</div>
+<div class="elec">0.89</div>
+<div class="estad">
+<li>+2</li>
+<li></li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/mes-de72.png" alt="Dinosaur"></div>
+<div class="at_details">Mes de<br>[Xe]6s<sup>2</sup></div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">174.9668</div>
+<div class="at_num">71</div>
+<div class="ener">523.5</div>
+<div class="elec">1.27</div>
+<div class="estad">
+<li>+3</li>
+<li></li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/tour72.png" alt="Dinosaur"></div>
+<div class="at_details">Tour</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">178.49</div>
+<div class="at_num">72</div>
+<div class="ener">658.5</div>
+<div class="elec">1.30</div>
+<div class="estad">
+<li>+4</li>
+<li>+3</li>
+<li>+2</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/pilotaje72.png" alt="Dinosaur"></div>
+<div class="at_details">Prueba Piloto</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">180.9478</div>
+<div class="at_num">73</div>
+<div class="ener">761.0</div>
+<div class="elec">1.50</div>
+<div class="estad">
+<li>+5</li>
+<li>+4</li>
+<li>+3</li>
+<li>+2</li>
+<li>-1</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/sprintai72.png" alt="Dinosaur"></div>
+<div class="at_details">Sprint</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">183.84</div>
+<div class="at_num">74</div>
+<div class="ener">770.0</div>
+<div class="elec">2.36</div>
+<div class="estad">
+<li>+6</li>
+<li>+5</li>
+<li>+4</li>
+<li>+3</li>
+<li>+2</li>
+<li>+1</li>
+<li>-1</li>
+<li>-2</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/business-shower72.png" alt="Dinosaur"></div>
+<div class="at_details">Business Shower</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">186.207</div>
+<div class="at_num">75</div>
+<div class="ener">760.0</div>
+<div class="elec">1.90</div>
+ <div class="estad">
+<li>+7</li>
+<li>+6</li>
+<li>+5</li>
+<li>+4</li>
+<li>+3</li>
+<li>+2</li>
+<li>+1</li>
+<li>-1</li>
+<li>-3</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/rueda-de-prensa72.png" alt="Dinosaur"></div>
+<div class="at_details">Rueda de prensa</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">190.23</div>
+<div class="at_num">76</div>
+<div class="ener">840.0</div>
+<div class="elec">2.20</div>
+<div class="estad">
+<li>+8</li>
+<li>+7</li>
+<li>+6</li>
+<li>+5</li>
+<li>+4</li>
+<li>+3</li>
+<li>+2</li>
+<li>+1</li>
+<li>-2</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/cierre72.png" alt="Dinosaur"></div>
+<div class="at_details">Cierre</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">192.217</div>
+<div class="at_num">77</div>
+<div class="ener">880.0</div>
+<div class="elec">2.20</div>
+<div class="estad">
+<li>+6</li>
+<li>+5</li>
+<li>+4</li>
+<li>+3</li>
+<li>+2</li>
+<li>+1</li>
+<li>-1</li>
+<li>-3</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/garaje72.png" alt="Dinosaur"></div>
+<div class="at_details">Garaje</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">195.084</div>
+<div class="at_num">78</div>
+<div class="ener">870</div>
+<div class="elec">2.28</div>
+<div class="estad">
+<li>+6</li>
+<li>+5</li>
+<li>+4</li>
+<li>+2</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/mesa-redonda72.png" alt="Dinosaur"></div>
+<div class="at_details">Mesa redonda</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">196.9665</div>
+<div class="at_num">79</div>
+<div class="ener">890.1</div>
+<div class="elec">2.54</div>
+<div class="estad">
+<li>+5</li>
+<li>+3</li>
+<li>+2</li>
+<li>+1</li>
+<li>-1</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/comite72.png" alt="Dinosaur"></div>
+<div class="at_details">Comité</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">200.59</div>
+<div class="at_num">80</div>
+<div class="ener">1007.1</div>
+<div class="elec">2.00</div>
+<div class="estad">
+<li>+4</li>
+<li>+2</li>
+<li>+1</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/coaching72.png" alt="Dinosaur"></div>
+<div class="at_details">Coaching</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">204.3833</div>
+<div class="at_num">81</div>
+<div class="ener">589.4</div>
+<div class="elec">1.62</div>
+<div class="estad">
+<li>+3</li>
+<li>+1</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/lluvia-de-ideas72.png" alt="Dinosaur"></div>
+<div class="at_details">Lluvia de retos</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">207.2</div>
+<div class="at_num">82</div>
+<div class="ener">715.6</div>
+<div class="elec">2.33</div>
+<div class="estad">
+<li>+4</li>
+<li>+2</li>
+<li>-4</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/carrera72.png" alt="Dinosaur"></div>
+<div class="at_details">Carrera</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">208.9804</div>
+<div class="at_num">83</div>
+<div class="ener">703.0</div>
+<div class="elec">2.02</div>
+<div class="estad">
+<li>+5</li>
+<li>+3</li>
+<li>-3</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/mesa-de-trabajo72.png" alt="Dinosaur"></div>
+<div class="at_details">Mesa de trabajo</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">(210)</div>
+<div class="at_num">84</div>
+<div class="ener">812.1</div>
+<div class="elec">2.00</div>
+<div class="estad">
+<li>+6</li>
+<li>+4</li>
+<li>+2</li>
+<li>-2</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/conferencia72.png" alt="Dinosaur"></div>
+<div class="at_details">Conferencia</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">(210)</div>
+<div class="at_num">85</div>
+<div class="ener">890.0</div>
+<div class="elec">2.20</div>
+<div class="estad">
+<li>+1</li>
+<li>-1</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/telethon72.png" alt="Dinosaur"></div>
+<div class="at_details">Telethon</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">(220)</div>
+<div class="at_num">86</div>
+<div class="ener">1037.0</div>
+<div class="elec">2.20</div>
+<div class="estad">
+<li></li>
+<li></li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/premiacion72.png" alt="Dinosaur"></div>
+<div class="at_details">Premiación</div>
+</div>
+</div>
+</div>
+<div class="periodic-row">
+<div class="cell">
+<div class="element">
+<div class="masa">(223)</div>
+<div class="at_num">87</div>
+<div class="ener">380.0</div>
+<div class="elec">0.70</div>
+<div class="estad">
+<li>+1</li>
+<li></li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/coctel72.png" alt="Dinosaur"></div>
+<div class="at_details">Coctel</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">(226)</div>
+<div class="at_num">88</div>
+<div class="ener">509.3</div>
+<div class="elec">0.90</div>
+<div class="estad">
+<li>+2</li>
+<li></li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/ano-de72.png" alt="Dinosaur"></div>
+<div class="at_details">Año de</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">(262)</div>
+<div class="at_num">103</div>
+<div class="ener">470.0</div>
+<div class="elec"></div>
+<div class="estad">
+<li>+3</li>
+<li></li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/inmersion72.png" alt="Dinosaur"></div>
+<div class="at_details">Inmersión</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">(261)</div>
+<div class="at_num">104</div>
+<div class="ener">580.0</div>
+<div class="elec"></div>
+<div class="estad">
+<li>+3</li>
+<li></li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/lanzamiento72.png" alt="Dinosaur"></div>
+<div class="at_details">Lanzamiento</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">(262)</div>
+<div class="at_num">105</div>
+<div class="ener"></div>
+<div class="elec"></div>
+<div class="estad">
+<li>+5</li>
+<li></li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/validacion72.png" alt="Dinosaur"></div>
+<div class="at_details">Validación<br></div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">(266)</div>
+<div class="at_num">106</div>
+<div class="ener"></div>
+<div class="elec"></div>
+<div class="estad">
+<li>+6</li>
+<li></li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/open-day72.png" alt="Dinosaur"></div>
+<div class="at_details">Open day<br></div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">(264)</div>
+<div class="at_num">107</div>
+<div class="ener"></div>
+<div class="elec"></div>
+<div class="estad">
+<li>+7</li>
+<li></li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/seminario72.png" alt="Dinosaur"></div>
+<div class="at_details">Seminario<br></div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">(277)</div>
+<div class="at_num">108</div>
+<div class="ener"></div>
+<div class="elec"></div>
+<div class="estad">
+<li>+8</li>
+<li></li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/foresight72.png" alt="Dinosaur"></div>
+<div class="at_details">Foresight<br></div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">(268)</div>
+<div class="at_num">109</div>
+<div class="ener"></div>
+<div class="elec"></div>
+<div class="estad">
+<li></li>
+<li></li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/feria72.png" alt="Dinosaur"></div>
+<div class="at_details">Feria</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">(271)</div>
+<div class="at_num">110</div>
+<div class="ener"></div>
+<div class="elec"></div>
+<div class="estad">
+<li></li>
+<li></li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/convencion72.png" alt="Dinosaur"></div>
+<div class="at_details">Convención</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">(272)</div>
+<div class="at_num">111</div>
+<div class="ener"></div>
+<div class="elec"></div>
+<div class="estad">
+<li></li>
+<li></li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/grupo-consultivo72.png" alt="Dinosaur"></div>
+<div class="at_details">Grupo consultivo</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">()</div>
+<div class="at_num">112</div>
+<div class="ener"></div>
+<div class="elec"></div>
+<div class="estad">
+<li></li>
+<li></li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/feedback-session72.png" alt="Dinosaur"></div>
+<div class="at_details">Feedback session</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">(284)</div>
+<div class="at_num">113</div>
+<div class="ener"></div>
+<div class="elec"></div>
+<div class="estad">
+<li></li>
+<li></li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/sesion72.png" alt="Dinosaur"></div>
+<div class="at_details">Sesión</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">(289)</div>
+<div class="at_num">114</div>
+<div class="ener"></div>
+<div class="elec"></div>
+<div class="estad">
+<li></li>
+<li></li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/gymkana72.png" alt="Dinosaur"></div>
+<div class="at_details">Gymkana</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">(288)</div>
+<div class="at_num">115</div>
+<div class="ener"></div>
+<div class="elec"></div>
+<div class="estad">
+<li></li>
+<li></li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/think-thank72.png" alt="Dinosaur"></div>
+<div class="at_details">Think Tank<br></div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">(292)</div>
+<div class="at_num">116</div>
+<div class="ener"></div>
+<div class="elec"></div>
+<div class="estad">
+<li></li>
+<li></li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/panel72.png" alt="Dinosaur"></div>
+<div class="at_details">Panel</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa"></div>
+<div class="at_num">117</div>
+<div class="ener"></div>
+<div class="elec"></div>
+<div class="estad">
+<li></li>
+<li></li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/validathon72.png" alt="Dinosaur"></div>
+<div class="at_details">Validathon</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">(294)</div>
+<div class="at_num">118</div>
+<div class="ener"></div>
+<div class="elec"></div>
+<div class="estad">
+<li></li>
+<li></li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/fiesta72.png" alt="Dinosaur"></div>
+<div class="at_details">Fiesta</div>
+</div>
+</div>
+</div>
+<br>
+<div class="periodic-row">
+<div style="clear:both;"></div>
+<div class="cell"></div>
+<div class="cell"> <div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/team72.png" alt="Dinosaur"></div></div>
+<div class="cell"><b>TEAMWORK</b> <br><div class="teamw">Conectar de manera virtual</div></div>
+<div class="cell"></div>
+<div class="cell">
+<div class="element">
+<div class="masa">138.9054</div>
+<div class="at_num">57</div>
+<div class="ener">538.1</div>
+<div class="elec">1.10</div>
+<div class="estad">
+<li>+3</li>
+<li>+2</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/webinar72.png" alt="Dinosaur"></div>
+<div class="at_details">Webinar</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">140.116</div>
+<div class="at_num">58</div>
+<div class="ener">534.4</div>
+<div class="elec">1.12</div>
+<div class="estad">
+<li>+4</li>
+<li>+3</li>
+<li>+2</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/master-class72.png" alt="Dinosaur"></div>
+<div class="at_details">Master class</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">140.9076</div>
+<div class="at_num">59</div>
+<div class="ener">527.0</div>
+<div class="elec">1.13</div>
+<div class="estad">
+<li>+4</li>
+<li>+3</li>
+<li>+2</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/live-stream72.png" alt="Dinosaur"></div>
+<div class="at_details">Live stream</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">144.242</div>
+<div class="at_num">60</div>
+<div class="ener">533.1</div>
+<div class="elec">1.14</div>
+<div class="estad">
+<li>+3</li>
+<li>+2</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/assessment72.png" alt="Dinosaur"></div>
+<div class="at_details">Assessment</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">(145)</div>
+<div class="at_num">61</div>
+<div class="ener">540.0</div>
+<div class="elec"></div>
+<div class="estad">
+<li>+3</li>
+<li></li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/metaverso72.png" alt="Dinosaur"></div>
+<div class="at_details">Metaverso</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">150.36</div>
+<div class="at_num">62</div>
+<div class="ener">544.5</div>
+<div class="elec">1.17</div>
+<div class="estad">
+<li>+3</li>
+<li>+2</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/llamada72.png" alt="Dinosaur"></div>
+<div class="at_details">Llamada</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">151.964</div>
+<div class="at_num">63</div>
+<div class="ener">547.1</div>
+<div class="elec"></div>
+<div class="estad">
+<li>+3</li>
+<li>+2</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/meeting-72.png" alt="Dinosaur"></div>
+<div class="at_details">Meeting</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">157.25</div>
+<div class="at_num">64</div>
+<div class="ener">593.4</div>
+<div class="elec">1.20</div>
+<div class="estad">
+<li>+3</li>
+<li>+2</li>
+<li>+1</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/chat-72.png" alt="Dinosaur"></div>
+<div class="at_details">Chat</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">158.9253</div>
+<div class="at_num">65</div>
+<div class="ener">565.8</div>
+<div class="elec"></div>
+<div class="estad">
+<li>+4</li>
+<li>+3</li>
+<li>+1</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/webcast72.png" alt="Dinosaur"></div>
+<div class="at_details">Web cast</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">162.500</div>
+<div class="at_num">66</div>
+<div class="ener">573.0</div>
+<div class="elec">1.22</div>
+<div class="estad">
+<li>+3</li>
+<li>+2</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/podcast72.png" alt="Dinosaur"></div>
+<div class="at_details">Podcast</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">164.9303</div>
+<div class="at_num">67</div>
+<div class="ener">581.0</div>
+<div class="elec">1.23</div>
+<div class="estad">
+<li>+3</li>
+<li></li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/mural72.png" alt="Dinosaur"></div>
+<div class="at_details">Mural</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">167.259</div>
+<div class="at_num">68</div>
+<div class="ener">589.3</div>
+<div class="elec">1.24</div>
+<div class="estad">
+<li>+3</li>
+<li></li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/quiz72.png" alt="Dinosaur"></div>
+<div class="at_details">Quiz</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">168.9342</div>
+<div class="at_num">69</div>
+<div class="ener">596.7</div>
+<div class="elec">1.25</div>
+<div class="estad">
+<li>+3</li>
+<li>+2</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/collage72.png" alt="Dinosaur"></div>
+<div class="at_details">Collage</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">173.054</div>
+<div class="at_num">70</div>
+<div class="ener">603.4</div>
+<div class="elec"></div>
+<div class="estad">
+<li>+3</li>
+<li>+2</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/wiki72.png" alt="Dinosaur"></div>
+<div class="at_details">Wiki</div>
+</div>
+</div>
+</div>
+<div class="periodic-row">
+<div class="cell"></div>
+<div class="cell"> <div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/team-building72.png" alt="Dinosaur"></div></div>
+<div class="cell"><b>TEAMBUILDING</b> <br><div class="teamw">Fortalecer el
+trabajo en equipo</div></div>
+<div class="cell"></div>
+<div class="cell">
+<div class="element">
+<div class="masa">()227</div>
+<div class="at_num">89</div>
+<div class="ener">499.0</div>
+<div class="elec">1.10</div>
+<div class="estad">
+<li>+3</li>
+<li></li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/deportes72.png" alt="Dinosaur"></div>
+<div class="at_details">Deportes</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">232.0280</div>
+<div class="at_num">90</div>
+<div class="ener">578.0</div>
+<div class="elec">1.30</div>
+<div class="estad">
+<li>+4</li>
+<li>+3</li>
+<li>+2</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/cata72.png" alt="Dinosaur"></div>
+<div class="at_details">Cata</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">231.0358</div>
+<div class="at_num">91</div>
+<div class="ener">568.0</div>
+<div class="elec">1.50</div>
+<div class="estad">
+<li>+5</li>
+<li>+4</li>
+<li>+3</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/cocina72.png" alt="Dinosaur"></div>
+<div class="at_details">Cocina</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">238.0289</div>
+<div class="at_num">92</div>
+<div class="ener">597.6</div>
+<div class="elec">1.38</div>
+<div class="estad">
+<li>+6</li>
+<li>+5</li>
+<li>+4</li>
+<li>+3</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/escape-room72.png" alt="Dinosaur"></div>
+<div class="at_details">Escape room</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">(237)</div>
+<div class="at_num">93</div>
+<div class="ener">604.5</div>
+<div class="elec">1.36</div>
+<div class="estad">
+<li>+7</li>
+<li>+6</li>
+<li>+5</li>
+<li>+4</li>
+<li>+3</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/meditacion72.png" alt="Dinosaur"></div>
+<div class="at_details">Meditación</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">(244)</div>
+<div class="at_num">94</div>
+<div class="ener">584.7</div>
+<div class="elec">1.28</div>
+<div class="estad">
+<li>+7</li>
+<li>+6</li>
+<li>+5</li>
+<li>+4</li>
+<li>+3</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/artesania72.png" alt="Dinosaur"></div>
+<div class="at_details">Artesanía</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">(243)</div>
+<div class="at_num">95</div>
+<div class="ener">578.0</div>
+<div class="elec">1.30</div>
+<div class="estad">
+<li>+6</li>
+<li>+5</li>
+<li>+4</li>
+<li>+3</li>
+<li>+2</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/diseno72.png" alt="Dinosaur"></div>
+<div class="at_details">Diseño</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">(247)</div>
+<div class="at_num">96</div>
+<div class="ener">581.0</div>
+<div class="elec">1.30</div>
+<div class="estad">
+<li>+4</li>
+<li>+3</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/musica72.png" alt="Dinosaur"></div>
+<div class="at_details">Música</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">(247)</div>
+<div class="at_num">97</div>
+<div class="ener">601.0</div>
+<div class="elec">1.30</div>
+<div class="estad">
+<li>+4</li>
+<li>+3</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/expresion72.png" alt="Dinosaur"></div>
+<div class="at_details">Expresión</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">(251)</div>
+<div class="at_num">98</div>
+<div class="ener">608.0</div>
+<div class="elec">1.30</div>
+<div class="estad">
+<li>+4</li>
+<li>+3</li>
+<li>+1</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/idiomas72.png" alt="Dinosaur"></div>
+<div class="at_details">Idiomas</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">(252)</div>
+<div class="at_num">99</div>
+<div class="ener">619.0</div>
+<div class="elec">1.30</div>
+<div class="estad">
+<li>+3</li>
+<li>+2</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/magia72.png" alt="Dinosaur"></div>
+<div class="at_details">Magia</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">(257)</div>
+<div class="at_num">100</div>
+<div class="ener">627.0</div>
+<div class="elec">1.30</div>
+<div class="estad">
+<li>+3</li>
+<li>+2</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/cultura-universal72.png" alt="Dinosaur"></div>
+<div class="at_details">Cultura universal</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">(258)</div>
+<div class="at_num">101</div>
+<div class="ener">635.0</div>
+<div class="elec">1.30</div>
+<div class="estad">
+<li>+3</li>
+<li>+2</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/artes-visuales72.png" alt="Dinosaur"></div>
+<div class="at_details">Artes visuales</div>
+</div>
+</div>
+<div class="cell">
+<div class="element">
+<div class="masa">(259)</div>
+<div class="at_num">102</div>
+<div class="ener">642.0</div>
+<div class="elec">1.30</div>
+<div class="estad">
+<li>+3</li>
+<li>+2</li>
+</div>
+<div class="symbol"><img decoding="async" src="https://nelmartinez.com/tpe/wp-content/uploads/2023/02/oficios72.png" alt="Dinosaur"></div>
+<div class="at_details">Oficios</div>
+</div>
+</div>
+<div class="cell"></div>
+</div>
+<div class="legend">
+</div>
+</div>
